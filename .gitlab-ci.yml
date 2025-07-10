@@ -3,7 +3,8 @@ stages:
 
 deploy:
   stage: deploy
-  
+  tags:
+    - internal  # <- this line is essential!
   script:
     - echo "Stopping existing containers..."
     - docker compose down
