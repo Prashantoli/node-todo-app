@@ -1,17 +1,17 @@
 stages:
-  - build
   - deploy
-
-build:
-  stage: build
-  script:
-    - echo "Building the app..."
-    # Example: npm install && npm run build
 
 deploy:
   stage: deploy
+  tags:
+    - internal  # use the tag you set for your runner
   script:
-    - echo "Deploying app to internal VM..."
+    - echo "Stopping existing containers..."
+    - docker-compose down
+    - echo "Building and starting containers..."
+    - docker-compose up -d
+    - docker-compose ps
+
     
 
 
