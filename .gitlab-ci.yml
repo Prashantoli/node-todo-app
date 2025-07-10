@@ -6,10 +6,10 @@ deploy:
   
   script:
     - echo "Stopping existing containers..."
-    - docker-compose down
+    - docker compose down
     - echo "Building and starting containers..."
-    - docker-compose up -d
-    - docker-compose ps
+    - docker compose up -d
+    - docker compose ps
 
     
 
