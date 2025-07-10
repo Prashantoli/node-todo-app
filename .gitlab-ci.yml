@@ -3,8 +3,7 @@ stages:
 
 deploy:
   stage: deploy
-  tags:
-    - internal  # use the tag you set for your runner
+  
   script:
     - echo "Stopping existing containers..."
     - docker-compose down
